@@ -22,4 +22,4 @@ done
 
 
 # setup oh-my-zsh
-sh "$ZSH/install.sh"
+sh "$ZSH/tools/install.sh"
