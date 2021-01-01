@@ -1,0 +1,14 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Josh
+	email = mail@chukwuanu.com
+	signingkey = 6D33109217FED074
+[credential]
+	helper = osxkeychain
+[commit]
+	gpgsign = true
+[core]
+	editor = vim
+[pull]
+	rebase = false
