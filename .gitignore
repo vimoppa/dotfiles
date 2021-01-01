@@ -1,4 +1,10 @@
+config/.cargo
+config/.rustup
+
+
 .DS_Store
 *.swp
-
-
+*.bak
+**/.ssh/*
+viminfo
+vim/.netrwhist
