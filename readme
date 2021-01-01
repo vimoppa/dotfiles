@@ -6,13 +6,28 @@ Node, Ruby and *NIX development.
 
 Setup
 ---------------------------------------------------
- => export USER_WORKDIR=/path/to/workspace/
+=> export USER_WORKDIR=/path/to/workspace/
  
- expect dotfile -> $USER_WORKDIR/dotfiles/
+expect dotfile -> $USER_WORKDIR/dotfiles/
 
 Installation
 ---------------------------------------------------
- => bash install.sh
+=> bash install.sh
 
 This symlinks the dotfiles folders and files into
 your $HOME directory
+
+Modification
+---------------------------------------------------
+Add plugins to submodule
+=> git submodule init
+=> git submodule add https://github.com/faith/vim-go.git vim/pack/plugins/start/vim-go
+=> git add .gitmodules vim/pack/plugins/start/vim-go
+
+Update plugins
+=> git submodule update --remote --merge
+
+Remove plugins
+=> git submodule deinit vim/pack/plugins/start/vim-go
+=> git rm vim/pack/plugins/start/vim-go
+=> rm -Rf .git/modules/vim/pack/plugins/start/vim-go
