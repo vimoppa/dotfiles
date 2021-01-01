@@ -1,0 +1,18 @@
+dotfiles
+---------------------------------------------------
+
+Very specific dotfile configurations. Setup for Go,
+Node, Ruby and *NIX development.
+
+Setup
+---------------------------------------------------
+ => export USER_WORKDIR=/path/to/workspace/
+ 
+ expect dotfile -> $USER_WORKDIR/dotfiles/
+
+Installation
+---------------------------------------------------
+ => bash install.sh
+
+This symlinks the dotfiles folders and files into
+your $HOME directory
