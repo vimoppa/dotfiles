@@ -19,3 +19,7 @@ do
 	    ln -s "$f" "$HOME/.${f##*/}"
     fi
 done
+
+
+# setup oh-my-zsh
+sh "$ZSH/install.sh"

@@ -1,0 +1,14 @@
+# QoL
+alias reload=source ~/.zshrc
+
+# ZSH
+alias zshrc="view ~/.zshrc"
+alias ohmyzsh="view ~/.oh-my-zsh"
+alias aconfig="view ~/.aliases"
+alias econfig="view ~/.exports"
+
+# TMUX
+alias mux=tmuxinator
+
+# PATH
+alias work=$HOME/go/src/github.com/

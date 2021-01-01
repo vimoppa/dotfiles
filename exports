@@ -1,0 +1,44 @@
+### NOTE: $USER_WORKDIR is my work/dev directory
+
+# LANG
+export LANG=en_US.UTF-8
+
+# OH-MY-ZSH
+export ZSH="$HOME/.config/oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.zsh"
+
+# EDITOR
+export EDITOR='vim'
+
+# POSTGRESQL
+export PGHOST=localhost
+export PGUSER=postgres
+export MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+# CARGO
+export CARGO_HOME="$HOME/.config/.cargo"
+export PATH="$CARGO_HOME/bin:$PATH"
+
+# RUSTUP
+export RUSTUP_HOME="$HOME/.config/.rustup"
+
+# GO 
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
+
+# BREW local binaries
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+# GPG KEY
+export GPG_TTY=$(tty)
+
+# HOMEBREW_BREWFILE
+export HOMEBREW_BREWFILE=$HOME/.config/brewfile/Brewfile
+
+
+# Local File Env
+export WORKDIR="$GOPATH/src/github.com"
+export USER_WORKDIR="$WORKDIR/IkeChukwuanu"
+
