@@ -1,6 +1,36 @@
-[submodule "vim/pack/plugins/start/vim-go"]
-	path = vim/pack/plugins/start/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule "config/oh-my-zsh"]
 	path = config/oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
+[submodule "vim/pack/plugins/start/vim-go"]
+	path = vim/pack/plugins/start/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "vim/pack/plugins/start/nerdtree"]
+	path = vim/pack/plugins/start/nerdtree
+	url = git@github.com:preservim/nerdtree.git
+[submodule "vim/pack/plugins/start/nerdtree-git-plugin"]
+	path = vim/pack/plugins/start/nerdtree-git-plugin
+	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
+[submodule "vim/pack/plugins/start/vim-nerdtree-syntax-highlight"]
+	path = vim/pack/plugins/start/vim-nerdtree-syntax-highlight
+	url = git@github.com:tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule "vim/pack/plugins/start/ack-vim"]
+	path = vim/pack/plugins/start/ack-vim
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/pack/plugins/start/tagbar"]
+	path = vim/pack/plugins/start/tagbar
+	url = git@github.com:preservim/tagbar.git
+[submodule "vim/pack/plugins/start/vim-colorschemes"]
+	path = vim/pack/plugins/start/vim-colorschemes
+	url = git@github.com:flazz/vim-colorschemes.git
+[submodule "vim/pack/plugins/start/vim-gitgutter"]
+	path = vim/pack/plugins/start/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/pack/plugins/start/vim-airline"]
+	path = vim/pack/plugins/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim/pack/plugins/start/vim-devicons"]
+	path = vim/pack/plugins/start/vim-devicons
+	url = git@github.com:ryanoasis/vim-devicons.git
+[submodule "vim/pack/plugins/start/ctrlp"]
+	path = vim/pack/plugins/start/ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
