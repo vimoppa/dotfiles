@@ -8,5 +8,6 @@ config/tmuxinator/
 *.swp
 *.bak
 **/.ssh/*
+zsh/theme/*.zsh-theme
 viminfo
 vim/.netrwhist
