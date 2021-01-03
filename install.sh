@@ -32,9 +32,15 @@ do
     fi
 done
 
-vim -u NONE -c "helptags ~/.vim/pack/plugins/start/nerdtree/doc" -c q
-vim -u NONE -c "helptags vim-gitgutter/doc" -c q
+local VIM_START_PLUGIN_DIR="$HOME/.vim/pack/plugins/start"
 
+for p in $VIM_START_PLUGIN_DIR/*
+do
+    if [ -d "$p/doc" ]
+    then
+        vim -u NONE -c "helptags $p/doc" -c q
+    fi
+done
 }
 
 run $@
