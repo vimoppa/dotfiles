@@ -10,6 +10,37 @@ fi
 # NOTE: user specific configuration files are in gitignore
 ## [ -e "viminfo" ] && rm "./viminfo" || touch "./viminfo"
 
+function setup_zsh() {
+    local ZSH_THEME_DIR="$HOME/.zsh/themes"
+    for z in $ZSH_THEME_DIR/*
+    do
+        echo "$z"
+        local zsh_file="${z##*/}"
+        if [[ $zsh_file == *.zsh-theme ]]
+        then
+            continue
+        fi
+
+        for i in $z/*
+        do
+            local inner_file="${i##*/}"
+            if [[ $inner_file == *.zsh-theme ]]
+            then
+                if [ -e $ZSH_THEME_DIR/$inner_file ]
+                then
+                    echo "$inner_file exists, cleaning up..."
+                    rm "$ZSH_THEME_DIR/$inner_file"
+                fi
+
+
+                ln -s "$i" "$ZSH_THEME_DIR/$inner_file" && {
+                    echo "new '$z' linked"
+                }
+            fi
+        done
+    done
+}
+
 function run() {
 
 # symlink dotfiles to $HOME directory
@@ -41,6 +72,9 @@ do
         vim -u NONE -c "helptags $p/doc" -c q
     fi
 done
+
+    # setup zsh plugin, theme
+    setup_zsh
 }
 
 run $@
