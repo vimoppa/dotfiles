@@ -32,6 +32,9 @@ do
     fi
 done
 
+vim -u NONE -c "helptags ~/.vim/pack/plugins/start/nerdtree/doc" -c q
+vim -u NONE -c "helptags vim-gitgutter/doc" -c q
+
 }
 
 run $@
