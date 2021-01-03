@@ -1,6 +1,8 @@
 config/.cargo
 config/.rustup
-
+config/htop/
+config/gitignore/
+config/tmuxinator/
 
 .DS_Store
 *.swp
