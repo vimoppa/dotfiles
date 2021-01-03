@@ -37,3 +37,6 @@
 [submodule "vim/pack/plugins/start/ctrlp"]
 	path = vim/pack/plugins/start/ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule "zsh/themes/spaceship-prompt"]
+	path = zsh/themes/spaceship-prompt
+	url = git@github.com:denysdovhan/spaceship-prompt.git
