@@ -41,36 +41,35 @@ function setup_zsh() {
 }
 
 function run() {
+    # symlink dotfiles to $HOME directory
+    for f in $USER_WORKDIR/dotfiles/*
+    do
+        local file="${f##*/}"
+        local file_home="$HOME/.$file"
 
-# symlink dotfiles to $HOME directory
-for f in $USER_WORKDIR/dotfiles/*
-do
-    local file="${f##*/}"
-    local file_home="$HOME/.$file"
+        if [ "$file" != "install.sh" ] && [ "$file" != "readme" ]
+        then
+            # cleanup symlink, if existing
+            [ -e "$file_home" ] && {
+                echo "$file link exists, cleaning up..."
+                rm "$file_home"
+            }
 
-    if [ "$file" != "install.sh" ] && [ "$file" != "readme" ]
-    then
-        # cleanup symlink, if existing
-        [ -e "$file_home" ] && {
-            echo "$file link exists, cleaning up..."
-            rm "$file_home"
-        }
+            ln -s "$f" "$file_home" && {
+                echo "new '$file_home' linked"
+            }
+        fi
+    done
 
-        ln -s "$f" "$file_home" && {
-            echo "new '$file_home' linked"
-        }
-    fi
-done
+    local VIM_START_PLUGIN_DIR="$HOME/.vim/pack/plugins/start"
 
-local VIM_START_PLUGIN_DIR="$HOME/.vim/pack/plugins/start"
-
-for p in $VIM_START_PLUGIN_DIR/*
-do
-    if [ -d "$p/doc" ]
-    then
-        vim -u NONE -c "helptags $p/doc" -c q
-    fi
-done
+    for p in $VIM_START_PLUGIN_DIR/*
+    do
+        if [ -d "$p/doc" ]
+        then
+            vim -u NONE -c "helptags $p/doc" -c q
+        fi
+    done
 
     # setup zsh plugin, theme
     setup_zsh
