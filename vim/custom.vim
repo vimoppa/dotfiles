@@ -18,22 +18,6 @@ endtry
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Coc Extensions
-let g:coc_global_extensions=[
-            \ 'coc-sh', 
-            \ 'coc-sql', 
-            \ 'coc-git',
-            \ 'coc-yaml',
-            \ 'coc-json', 
-            \ 'coc-python',
-            \ 'coc-tsserver',
-            \]
-
-let g:LanguageClient_serverCommands = {
-            \ }
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " YouCompleteMe
 let g:ycm_language_server =[
             \ ]

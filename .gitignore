@@ -1,7 +1,6 @@
 config/.nvm
 config/.cargo
 config/.rustup
-config/coc
 config/htop/
 config/yarn/
 config/gitignore/
