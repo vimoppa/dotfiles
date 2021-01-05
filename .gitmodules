@@ -40,3 +40,18 @@
 [submodule "zsh/themes/spaceship-prompt"]
 	path = zsh/themes/spaceship-prompt
 	url = git@github.com:denysdovhan/spaceship-prompt.git
+[submodule "vim/pack/plugins/start/ale"]
+	path = vim/pack/plugins/start/ale
+	url = git@github.com:dense-analysis/ale.git
+[submodule "vim/pack/plugins/start/coc"]
+	path = vim/pack/plugins/start/coc
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/pack/plugins/start/vim-prettier"]
+	path = vim/pack/plugins/start/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git
+[submodule "vim/pack/plugins/start/vim-svelte"]
+	path = vim/pack/plugins/start/vim-svelte
+	url = git@github.com:evanleck/vim-svelte.git
+[submodule "vim/pack/plugins/start/vim-terraform"]
+	path = vim/pack/plugins/start/vim-terraform
+	url = git@github.com:hashivim/vim-terraform.git
