@@ -1,5 +1,8 @@
 ### NOTE: $USER_WORKDIR is my work/dev directory
 
+# Personal Scripts
+export PATH="$HOME/.bin:$PATH"
+
 # LANG
 export LANG=en_US.UTF-8
 
@@ -26,6 +29,18 @@ export RUSTUP_HOME="$HOME/.config/.rustup"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
+
+# NVM - Node package manager
+export NVM_DIR="$HOME/.config/.nvm"
+# TODO: restructure
+# This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && {
+    . "/usr/local/opt/nvm/nvm.sh"
+}
+# This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && {
+    . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+}
 
 # BREW local binaries
 export PATH="/usr/local/sbin:$PATH"

@@ -14,7 +14,6 @@ function setup_zsh() {
     local ZSH_THEME_DIR="$HOME/.zsh/themes"
     for z in $ZSH_THEME_DIR/*
     do
-        echo "$z"
         local zsh_file="${z##*/}"
         if [[ $zsh_file == *.zsh-theme ]]
         then
