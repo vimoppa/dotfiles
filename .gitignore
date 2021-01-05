@@ -1,6 +1,9 @@
+config/.nvm
 config/.cargo
 config/.rustup
+config/coc
 config/htop/
+config/yarn/
 config/gitignore/
 config/tmuxinator/
 
@@ -8,6 +11,6 @@ config/tmuxinator/
 *.swp
 *.bak
 **/.ssh/*
-zsh/theme/*.zsh-theme
+zsh/themes/*.zsh-theme
 viminfo
 vim/.netrwhist
