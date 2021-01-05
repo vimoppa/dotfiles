@@ -18,6 +18,40 @@ endtry
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Coc Extensions
+let g:coc_global_extensions=[
+            \ 'coc-sh', 
+            \ 'coc-sql', 
+            \ 'coc-git',
+            \ 'coc-yaml',
+            \ 'coc-json', 
+            \ 'coc-python',
+            \ 'coc-tsserver',
+            \]
+
+let g:LanguageClient_serverCommands = {
+            \ }
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe
+let g:ycm_language_server =[
+            \ ]
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ACK
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+" Ack.vim configured to use https://github.com/BurntSushi/ripgrep
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --smart-case --pretty'
+endif
+
+let g:ale_linters = {'rust': ['analyzer']}
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 let g:NERDTreeWinPos = "left"
 " nnoremap <silent> <leader>d :NERDTree-I<CR>
@@ -30,23 +64,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 " Mirror the NERDTree before showing it. This makes it the same on all tabs.
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-" KeyBindings:
-" <u>        => move the tree root up one directory
-" <C-u>      => same as 'u'
-" <r>        => recursively refresh the current directory
-" <C-r>      => recursively refresh the current root
-" <m>        => display the NERDTree menu
-" <C-c>      => change the tree root to the selected dir
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ACK
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
-" Ack.vim configured to use https://github.com/BurntSushi/ripgrep
-if executable('rg')
-  let g:ackprg = 'rg --vimgrep --smart-case --pretty'
-endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,3 +75,9 @@ let g:tagbar_autofocus = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GitGutter
 let g:gitgutter_enabled = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Prettier
+nnoremap <silent> <leader>p :Prettier<CR>
+
