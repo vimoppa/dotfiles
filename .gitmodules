@@ -100,3 +100,9 @@
 [submodule "vim/pack/plugins/start/vim-json"]
 	path = vim/pack/plugins/start/vim-json
 	url = git@github.com:elzr/vim-json.git
+[submodule "vim/pack/plugins/start/typescript-vim"]
+	path = vim/pack/plugins/start/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "vim/pack/plugins/start/nginx"]
+	path = vim/pack/plugins/start/nginx
+	url = git@github.com:chr4/nginx.vim.git
