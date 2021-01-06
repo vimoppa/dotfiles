@@ -19,6 +19,14 @@ running the following command:
     bash install.sh
 
 
+NOTE:
+- https://github.com/ycm-core/YouCompleteMe
+Code Intellisense and completion with YCM, install manually.
+    
+    cd vim/pack/plugins/start/YouCompleteMe
+    python3 install.py --clangd-completer --go-completer --rust-completer --ts-completer
+
+
 Modification
 ------------
 Add plugins to submodule:
