@@ -10,6 +10,10 @@ fi
 # NOTE: user specific configuration files are in gitignore
 ## [ -e "viminfo" ] && rm "./viminfo" || touch "./viminfo"
 
+function command_exists() {
+    command -v "$@" >/dev/null 2>&1
+}
+
 function setup_zsh() {
     local ZSH_THEME_DIR="$HOME/.zsh/themes"
     for z in $ZSH_THEME_DIR/*
@@ -41,6 +45,11 @@ function setup_zsh() {
 }
 
 function run() {
+    command_exists git || {
+        echo "git is not installed"
+        exit 1
+    }
+
     # symlink dotfiles to $HOME directory
     for f in $USER_WORKDIR/dotfiles/*
     do
@@ -67,7 +76,10 @@ function run() {
     do
         if [ -d "$p/doc" ]
         then
+	    echo "-> ${p##*/}: Loading docs"
             vim -u NONE -c "helptags $p/doc" -c q
+	else
+	    echo "-> ${p##*/}: No docs loaded"
         fi
     done
 

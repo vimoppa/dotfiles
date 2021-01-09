@@ -9,7 +9,7 @@ Update WORKDIR and USER_WORKDIR contained in the exports file,
 expect dotfile == $USER_WORKDIR/dotfiles:
 
     export USER_WORKDIR=/path/to/workspace/
- 
+
 
 Installation
 ------------
@@ -22,7 +22,7 @@ running the following command:
 NOTE:
 - https://github.com/ycm-core/YouCompleteMe
 Code Intellisense and completion with YCM, install manually.
-    
+
     cd vim/pack/plugins/start/YouCompleteMe
     python3 install.py --clangd-completer --go-completer --rust-completer --ts-completer
 
@@ -30,17 +30,21 @@ Code Intellisense and completion with YCM, install manually.
 Modification
 ------------
 Add plugins to submodule:
-    
+
     git submodule init
     git submodule add https://github.com/faith/vim-go.git vim/pack/plugins/start/vim-go
     git add .gitmodules vim/pack/plugins/start/vim-go
 
 Update plugins:
-    
+
+    git submodule update --init --recursive
+
+or
+
     git submodule update --remote --merge
 
 Remove plugins:
-    
+
     git submodule deinit vim/pack/plugins/start/vim-go
     git rm vim/pack/plugins/start/vim-go
     rm -Rf .git/modules/vim/pack/plugins/start/vim-go
