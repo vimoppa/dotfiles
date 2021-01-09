@@ -10,6 +10,10 @@ export LANG=en_US.UTF-8
 export ZSH="$HOME/.config/oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.zsh"
 
+# SPACESHIP
+SPACESHIP_GCLOUD_SHOW=false
+SPACESHIP_AWS_SHOW=false
+
 # EDITOR
 export EDITOR='vim'
 
