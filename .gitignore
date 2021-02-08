@@ -1,6 +1,7 @@
 config/.nvm
 config/.cargo
 config/.rustup
+config/gh
 config/coc
 config/htop/
 config/yarn/
@@ -15,3 +16,4 @@ config/tmuxinator/
 zsh/themes/*.zsh-theme
 viminfo
 vim/.netrwhist
+vim/.undo

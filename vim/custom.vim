@@ -42,6 +42,7 @@ set splitbelow
 " Providers tab-completion for all file related task
 set path+=**
 
+set relativenumber
 set number
 set wildmenu
 set encoding=UTF-8
@@ -70,6 +71,26 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+" Enable undo persistence
+if has('persistent_undo')
+    let target_path = expand('$HOME/.vim/.undo')
+
+    if !isdirectory(target_path)
+        call system('mkdir ' . target_path)
+    endif
+
+    let &undodir = target_path
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom ColorSheme:
@@ -89,7 +110,7 @@ set background=dark
 try
     colorscheme codedark " PaperColor gruvbox
     let g:PaperColor_Theme_Options = {
-                \}
+     \}
 catch
 endtry
 
@@ -97,6 +118,8 @@ endtry
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set cindent
 
 " Use spaces instead of tabs
 set expandtab
@@ -119,6 +142,8 @@ set wrap "Wrap lines
 " disable autoident for filetypes that have incompetent indent files
 " autocmd FileType vim,tex let b:ai=0
 
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files, backups and undo
@@ -224,6 +249,9 @@ let g:gitgutter_enabled = 1
 
 set autowrite
 
+" enable folding
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+
 " disable code completion
 let g:go_code_completion_enabled = 1
 
@@ -296,6 +324,8 @@ let g:coc_global_extensions = [
 \ 'coc-sql',
 \ 'coc-prettier',
 \ 'coc-eslint',
+\ 'coc-clangd',
+\ 'coc-pyright',
 \]
 
 

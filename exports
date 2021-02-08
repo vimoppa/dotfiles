@@ -13,6 +13,8 @@ export ZSH_CUSTOM="$HOME/.zsh"
 # SPACESHIP
 SPACESHIP_GCLOUD_SHOW=false
 SPACESHIP_AWS_SHOW=false
+SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_KUBECTL_SHOW=false
 
 # EDITOR
 export EDITOR='vim'
@@ -29,7 +31,7 @@ export PATH="$CARGO_HOME/bin:$PATH"
 # RUSTUP
 export RUSTUP_HOME="$HOME/.config/.rustup"
 
-# GO 
+# GO
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
@@ -60,4 +62,3 @@ export HOMEBREW_BREWFILE=$HOME/.config/brewfile/Brewfile
 # Local File Env
 export WORKDIR="$GOPATH/src/github.com"
 export USER_WORKDIR="$WORKDIR/IkeChukwuanu"
-
