@@ -88,3 +88,6 @@
 [submodule "vim/pack/plugins/start/coc"]
 	path = vim/pack/plugins/start/coc
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/pack/plugins/start/vim-wakatime"]
+	path = vim/pack/plugins/start/vim-wakatime
+	url = git@github.com:wakatime/vim-wakatime.git
