@@ -53,6 +53,10 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" don't bell or blink
+set noeb
+set vb t_vb=
+
 " Sets how many lines of history VIM has to remember
 set history=1000
 
@@ -218,6 +222,8 @@ endif
 " NERDTree:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let NERDTreeNaturalSort = 1
+
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$']
@@ -266,6 +272,8 @@ let g:go_metalinter_autosave = 1
 
 " Use popup-window for K and :GoDoc, rather than the preview-window
 let g:go_doc_popup_window = 1
+
+" let g:go_highlight_string_spellcheck=0
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -327,6 +335,16 @@ let g:coc_global_extensions = [
 \ 'coc-clangd',
 \ 'coc-pyright',
 \]
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SQL FILE TYPE:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" don't let sql completion ruin insert-mode
+" disable annoying autocompletion on <Left><Right> keys
+" Reference: satori/dotrc
+let g:ftplugin_sql_omni_key_right = 'stub'
+let g:ftplugin_sql_omni_key_left = 'stub'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

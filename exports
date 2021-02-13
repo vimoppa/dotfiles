@@ -15,6 +15,7 @@ SPACESHIP_GCLOUD_SHOW=false
 SPACESHIP_AWS_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
 SPACESHIP_KUBECTL_SHOW=false
+SPACESHIP_ROOT="$HOME/.zsh/themes/spaceship-prompt"
 
 # EDITOR
 export EDITOR='vim'
@@ -61,4 +62,4 @@ export HOMEBREW_BREWFILE=$HOME/.config/brewfile/Brewfile
 
 # Local File Env
 export WORKDIR="$GOPATH/src/github.com"
-export USER_WORKDIR="$WORKDIR/IkeChukwuanu"
+export USER_WORKDIR="$WORKDIR/vimoppa"

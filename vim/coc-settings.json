@@ -5,7 +5,9 @@
     "python",
     "json",
     "css",
-    "markdown"
+    "markdown",
+    "yaml",
+    "sql"
   ],
   "languageserver": {
     "tsserver.disableAutomaticTypeAcquisition": false,
