@@ -1,0 +1,5 @@
+# Font configuration
+font:
+  normal:
+    family: "Input Mono"
+  size: 14.0
