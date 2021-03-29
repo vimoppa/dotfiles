@@ -1,14 +1,23 @@
 [init]
 	defaultBranch = main
-[user]
-	name = Josh
-	email = mail@chukwuanu.com
-	signingkey = 6D33109217FED074
-[credential]
-	helper = osxkeychain
-[commit]
-	gpgsign = true
+
 [core]
 	editor = vim
+
 [pull]
 	rebase = false
+
+[credential]
+	helper = osxkeychain
+
+[commit]
+	# gpgsign = true
+	verbose = true
+
+[user]
+	name = Josh Ike
+	email = mail@chukwuanu.co
+	signingkey = 6D33109217FED074
+    
+[includeIf "gitdir:~/go/src/github.com/oremi-co/"]
+	path = ~/.git/oremi
