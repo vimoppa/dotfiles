@@ -100,3 +100,6 @@
 [submodule "vim/pack/plugins/start/editorconfig-vim"]
 	path = vim/pack/plugins/start/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "vim/pack/plugins/start/vim-graphql"]
+	path = vim/pack/plugins/start/vim-graphql
+	url = git@github.com:jparise/vim-graphql.git

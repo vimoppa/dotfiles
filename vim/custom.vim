@@ -21,9 +21,9 @@ set lazyredraw
 set ttymouse=xterm2
 
 " Enable syntax highlighting
-syntax enable
+syntax on
 
-" show commands typed
+"show commands typed
 set showcmd
 
 " Show popup menu, even if there is one entry
@@ -48,8 +48,9 @@ set wildmenu
 set encoding=UTF-8
 
 " No annoying sound on errors
-set noerrorbells
-set novisualbell
+" set noerrorbells
+" set novisualbell
+set belloff=all
 set t_vb=
 set tm=500
 
@@ -149,6 +150,11 @@ set wrap "Wrap lines
 " Remap for rename current word
 nmap <F2> <Plug>(coc-rename)
 
+" enable indentation list
+set list
+set listchars=tab:┊\ ,
+hi SpecialKey ctermfg=239 ctermbg=bg
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files, backups and undo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -239,7 +245,8 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 " Mirror the NERDTree before showing it. This makes it the same on all tabs.
-nmap <leader>n :NERDTreeToggle<cr>
+noremap <leader>n :NERDTreeToggle<CR>
+noremap <leader>m :NERDTreeFind<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,7 +271,6 @@ let g:go_code_completion_enabled = 1
 " Auto import dependencies when save the file
 let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
-" let g:go_list_type = "quickfix"
 
 " Enable meta linter and dispatch it on save
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
@@ -273,7 +279,24 @@ let g:go_metalinter_autosave = 1
 " Use popup-window for K and :GoDoc, rather than the preview-window
 let g:go_doc_popup_window = 1
 
-" let g:go_highlight_string_spellcheck=0
+" let g:go_highlight_string_spellcheck=1
+
+" set 'guru scope' for vim-go subcommands.
+" autocmd BufRead /home/martin/go/src/github.com/user/pkg/*.go
+"     \ :GoGuruScope github.com/user/pkg
+
+" let g:go_auto_type_info = 1
+let g:go_term_enabled = 1
+let g:go_fmt_fail_silently = 0
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:syntastic_go_checkers = ['go']
+let g:go_list_type = "quickfix"
+let g:go_template_autocreate = 0
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -301,10 +324,12 @@ let g:ale_fixers = {
 " Enable Linting for specific filetypes
 let g:ale_linters = {
 \   'javascript': ['eslint', 'tsserver'],
+\   'go': ['go build', 'golint', 'gofmt', 'go vet'],
 \}
 
 " Only run linters named in ale_linters settings
 let g:ale_linters_explicit = 1
+let g:airline#extensions#ale#enabled = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -334,6 +359,7 @@ let g:coc_global_extensions = [
 \ 'coc-eslint',
 \ 'coc-clangd',
 \ 'coc-pyright',
+\ 'coc-db',
 \]
 
 
@@ -345,6 +371,15 @@ let g:coc_global_extensions = [
 " Reference: satori/dotrc
 let g:ftplugin_sql_omni_key_right = 'stub'
 let g:ftplugin_sql_omni_key_left = 'stub'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" EDITORCONFIG:
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" Disable for specific files.
+au FileType gitcommit let b:EditorConfig_disable = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

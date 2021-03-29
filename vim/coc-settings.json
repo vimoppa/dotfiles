@@ -2,6 +2,7 @@
   "diagnostic.displayByAle": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
+    "typescript",
     "python",
     "json",
     "css",
