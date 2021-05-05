@@ -11,13 +11,13 @@
 	helper = osxkeychain
 
 [commit]
-	# gpgsign = true
+    gpgsign = true
 	verbose = true
 
 [user]
-	name = Josh Ike
-	email = mail@chukwuanu.co
+	name = Josh
+	email = mail@chukwuanu.com
 	signingkey = 6D33109217FED074
-    
+
 [includeIf "gitdir:~/go/src/github.com/oremi-co/"]
 	path = ~/.git/oremi
