@@ -18,7 +18,7 @@ set ttyfast
 set lazyredraw
 
 " indicate terminal type for mouse code
-set ttymouse=xterm2
+"set ttymouse=xterm-kitty
 
 " Enable syntax highlighting
 syntax on
@@ -153,7 +153,7 @@ nmap <F2> <Plug>(coc-rename)
 " enable indentation list
 set list
 set listchars=tab:┊\ ,
-hi SpecialKey ctermfg=239 ctermbg=bg
+" hi SpecialKey ctermfg=239 ctermbg=bg
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files, backups and undo
