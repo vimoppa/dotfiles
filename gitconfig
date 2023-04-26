@@ -8,7 +8,7 @@
 	rebase = false
 
 [credential]
-	helper = osxkeychain
+	helper = store
 
 [commit]
     gpgsign = true
@@ -17,7 +17,22 @@
 [user]
 	name = Josh
 	email = mail@chukwuanu.com
-	signingkey = 6D33109217FED074
+	signingkey = 53D69321DEE300B4
 
-[includeIf "gitdir:~/go/src/github.com/oremi-co/"]
+[includeIf "gitdir:~/src/github.com/oremi-co/"]
 	path = ~/.git/oremi
+
+[color]
+	ui = auto
+
+[gpg]
+	program = gpg
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/

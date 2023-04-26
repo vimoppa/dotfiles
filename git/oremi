@@ -4,3 +4,9 @@
 [user]
         name = "Josh Ike"
         email = "ike@oremi.co"
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[url "ssh://git@git.local.intranet/"]
+	insteadOf = https://git.local.intranet/
