@@ -5,11 +5,13 @@ dotfiles contains very specific configurations for Go, Node, Ruby and *NIX devel
 
 Setup
 -----
-Update WORKDIR and USER_WORKDIR contained in the exports file,
 expect dotfile == $USER_WORKDIR/dotfiles:
 
     export USER_WORKDIR=/path/to/workspace/
 
+    example:
+        export WORKDIR="~/src/github.com"
+        export USER_WORKDIR="$WORKDIR/vimoppa"
 
 Installation
 ------------
