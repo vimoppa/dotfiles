@@ -20,7 +20,7 @@ function setup_config() {
     }
 
     ln -s "${c}" $"${config}" && {
-      echo "new '${config}' linked"
+      echo "'${config}' linked"
     }
   done
 }
