@@ -20,6 +20,10 @@ running the following command:
 
     bash install.sh
 
+Or
+
+    USER_WORKDIR=~/src/github.com/vimoppa bash install.sh
+
 
 NOTE:
 - https://github.com/ycm-core/YouCompleteMe
