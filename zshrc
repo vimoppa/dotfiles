@@ -12,6 +12,7 @@ export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
 
 ## go private repo for oremi
 export GOPRIVATE=github.com/oremi-co/*
+export AWS_PROFILE=22array ### set to `default` for Onramper configuration
 
 # NIX environment
 export NIXPKGS_ALLOW_UNFREE=1
@@ -25,7 +26,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # cargo
 source "$HOME/.cargo/env"
-CARGO_NET_GIT_FETCH_WITH_CLI=true # Cargo will use the git executable to fetch registry indexes and git dependencies
+export CARGO_NET_GIT_FETCH_WITH_CLI=true # Cargo will use the git executable to fetch registry indexes and git dependencies
+# let g:rustfmt_autosave=1 # enable automatic running of :RustFmt when you save a buffer
 
 # GPG KEY
 export GPG_TTY=$(tty)
@@ -47,22 +49,25 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# theme
-#ZSH_THEME="spaceshidp"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-# aliases
-#source ~/.aliases
+# pnpm
+export PNPM_HOME="/Users/chukwuanu/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
-# exports
-#source ~/.exports
+# exports and shortcuts for working within github.com/vimoppa
+export OPPA="$HOME/src/github.com/vimoppa"
+vimoppa () # change directory to $OPPA 
+{
+  cd $OPPA
+}
 
-## plugins
-#plugins=(
-#  git
-#  docker
-#  dotenv
-#  osx
-#  golang
-#)
-
-# source $ZSH/oh-my-zsh.sh
+dotfiles ()
+{
+  cd "$OPPA/dotfiles/"
+  vi .
+}

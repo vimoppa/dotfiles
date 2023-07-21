@@ -31,9 +31,9 @@ function run() {
   #        exit 1
   #    }
 
-  ln -s $USER_WORKDIR/zshrc ~/.zshrc
-  ln -s $USER_WORKDIR/gitconfig ~/.gitconfig
-  ln -s $USER_WORKDIR/git ~/.git
+  ln -s $USER_WORKDIR/dotfiles/zshrc "${HOME}/.zshrc"
+  ln -s $USER_WORKDIR/dotfiles/gitconfig "${HOME}/.gitconfig"
+  ln -s $USER_WORKDIR/dotfiles/git "${HOME}/.git"
 
   # setup config symlinks
   setup_config

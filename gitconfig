@@ -22,6 +22,9 @@
 [includeIf "gitdir:~/src/github.com/oremi-co/"]
 	path = ~/.git/oremi
 
+[includeIf "gitdir:~/src/github.com/dlhosolutions/"]
+	path = ~/.git/dlho
+
 [color]
 	ui = auto
 
