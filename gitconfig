@@ -2,7 +2,7 @@
 	defaultBranch = main
 
 [core]
-	editor = vim
+	editor = nvim --clean
 
 [pull]
 	rebase = false
