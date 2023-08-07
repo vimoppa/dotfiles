@@ -6,7 +6,6 @@ if [ -z $USER_WORKDIR ]; then
 fi
 
 # config symlinks are handled separately
-declare dotfiles_files=("bin" "config" "install.sh" "readme")
 
 function setup_config() {
   # symlink config to $HOME/.config directory
@@ -14,26 +13,15 @@ function setup_config() {
     local cfg="${c##*/}"
     local config="${HOME}/.config/${cfg}"
 
-    [ -e "${config}" ] && {
-      echo "${cfg} link exists, cleaning up..."
-      rm -rf "${config}"
-    }
-
-    ln -s "${c}" $"${config}" && {
-      echo "'${config}' linked"
-    }
+    ln -shfv "${c}" $"${config}"
   done
 }
 
 function run() {
-  #    command_exists git || {
-  #        echo "git is not installed"
-  #        exit 1
-  #    }
-
-  ln -s $USER_WORKDIR/dotfiles/zshrc "${HOME}/.zshrc"
-  ln -s $USER_WORKDIR/dotfiles/gitconfig "${HOME}/.gitconfig"
-  ln -s $USER_WORKDIR/dotfiles/git "${HOME}/.git"
+  ln -shfv $USER_WORKDIR/dotfiles/zshrc "${HOME}/.zshrc"
+  ln -shfv $USER_WORKDIR/dotfiles/tmux.conf "${HOME}/.tmux.conf"
+  ln -shfv $USER_WORKDIR/dotfiles/gitconfig "${HOME}/.gitconfig"
+  ln -shfv $USER_WORKDIR/dotfiles/git "${HOME}/.git"
 
   # setup config symlinks
   setup_config
