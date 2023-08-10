@@ -4,6 +4,8 @@ export PATH="/opt/homebrew/opt/go@1.18/bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # For compilers to find libpq you may need to set:
