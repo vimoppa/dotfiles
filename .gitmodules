@@ -3,4 +3,4 @@
 	url = git@github.com:IkeChukwuanu/brewfile.git
 [submodule "config/nvim"]
 	path = config/nvim
-	url = git@github.com:vimoppa/NvChad.git
+	url = git@github.com:vimoppa/nvim.git
