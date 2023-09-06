@@ -53,6 +53,15 @@ export LC_ALL=en_US.UTF-8
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+# Dynamically add all node versions installed via nvm to beginning of PATH,
+# to take precedence over any other node version 
+# (i.e. installed via brew install node or any formula dependencies)
+for f in $HOME/.nvm/versions/node/*; do
+  if [ -d "$f" ]; then
+      PATH=$f/bin:$PATH
+  fi
+done
+
 # pnpm
 export PNPM_HOME="/Users/chukwuanu/Library/pnpm"
 case ":$PATH:" in
@@ -73,3 +82,16 @@ dotfiles ()
   cd "$OPPA/dotfiles/"
   vi .
 }
+
+# see: https://stackoverflow.com/questions/65612411/forcing-docker-to-use-linux-amd64-platform-by-default-on-macos/69636473#69636473
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# export POSTGRES_HOST=localhost
+# export POSTGRES_DB=postgres
+# export POSTGRES_USER=postgres
+# export POSTGRES_PASSWORD=postgres
+
+export PGPORT=5432
+export PGHOST=localhost 
+export PGUSER=chukwuanu
+export PGDB=postgres
